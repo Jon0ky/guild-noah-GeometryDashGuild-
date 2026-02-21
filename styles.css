@@ -1,0 +1,776 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+
+/* ============================================
+   CSS Variables — Premium Dark Luxury Palette
+   ============================================ */
+:root {
+    --bg-base:        #0d0e12;
+    --bg-surface:     #13151c;
+    --bg-card:        #181a24;
+    --bg-card-hover:  #1e2130;
+    --border:         rgba(255,255,255,0.07);
+    --border-accent:  rgba(212,175,55,0.35);
+    --gold:           #d4af37;
+    --gold-light:     #f0d060;
+    --gold-dim:       rgba(212,175,55,0.15);
+    --text-primary:   #f0f2f8;
+    --text-secondary: #7b83a0;
+    --text-muted:     #3f4460;
+    --blue-accent:    #4f8ef7;
+    --rank-glow:      rgba(212,175,55,0.18);
+    --shadow-card:    0 4px 24px rgba(0,0,0,0.5);
+    --radius-card:    10px;
+    --radius-pill:    999px;
+    --font-main:      'Outfit', sans-serif;
+    --font-display:   'Playfair Display', serif;
+    --transition:     all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   Reset & Base
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    background: var(--bg-base);
+    background-image:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212,175,55,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 100%, rgba(79,142,247,0.04) 0%, transparent 60%);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-main);
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+/* ============================================
+   Header / Banner
+   ============================================ */
+.header-wrapper {
+    width: 100%;
+    max-width: 860px;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.6), 0 0 0 1px var(--border);
+    margin-top: 4px;
+}
+
+.header-wrapper picture img {
+    display: block;
+    width: 100%;
+}
+
+/* ============================================
+   Navbar
+   ============================================ */
+.navbar {
+    background: rgba(13,14,18,0.82);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+    padding: 0.85rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), background 0.3s;
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 0 0 20px rgba(212,175,55,0.3);
+}
+
+/* Desktop Nav */
+.desktop-nav {
+    display: flex;
+    list-style: none;
+    gap: 2.2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.desktop-nav a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-family: var(--font-main);
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: var(--transition);
+    position: relative;
+    padding-bottom: 3px;
+}
+
+.desktop-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover {
+    color: var(--gold-light);
+}
+
+.desktop-nav a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger */
+.hamburger-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 0.35rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    order: -1;
+}
+
+.hamburger-btn:hover {
+    border-color: var(--gold);
+    background: var(--gold-dim);
+}
+
+.hamburger-btn svg {
+    width: 22px;
+    height: 22px;
+    color: var(--text-primary);
+}
+
+svg {
+    color: var(--text-primary);
+}
+
+/* Mobile menu */
+.nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    width: 280px;
+    height: 100vh;
+    background: rgba(13,14,18,0.97);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border);
+    box-shadow: 4px 0 30px rgba(0,0,0,0.5);
+    transition: left 0.3s cubic-bezier(0.4,0,0.2,1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-menu.active {
+    left: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 1.4rem;
+    align-self: flex-start;
+    transition: var(--transition);
+}
+
+.close-btn:hover {
+    opacity: 0.7;
+}
+
+.close-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+.nav-links a {
+    display: block;
+    padding: 0.9rem 2rem;
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: var(--transition);
+    border-left: 2px solid transparent;
+}
+
+.nav-links a:hover {
+    background: var(--gold-dim);
+    border-left-color: var(--gold);
+    color: var(--gold-light);
+    padding-left: 2.5rem;
+}
+
+/* Overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Content utils */
+.content {
+    max-width: 1200px;
+    margin: 6rem auto 4rem;
+    padding: 2rem;
+    color: var(--text-primary);
+}
+
+.content h1 {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.content p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+.content-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: 3rem;
+    margin-bottom: 2rem;
+    min-height: 400px;
+}
+
+.content-section h2 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--gold-light);
+}
+
+/* ============================================
+   Season Buttons
+   ============================================ */
+.seasons-wrapper {
+    width: 85%;
+    max-width: 820px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 4px 0;
+}
+
+.arrow-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+.arrow-btn:hover {
+    background: var(--gold-dim);
+    border-color: var(--border-accent);
+    color: var(--gold);
+    transform: scale(1.06);
+}
+
+.arrow-btn.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.arrow-btn.disabled:hover {
+    transform: none;
+    background: var(--bg-card);
+    border-color: var(--border);
+    color: var(--text-secondary);
+}
+
+.seasons-scroll {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    flex: 1;
+    padding: 8px 0;
+    scrollbar-width: none;
+}
+
+.seasons-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.season-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 10px 22px;
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    transition: var(--transition);
+    flex-shrink: 0;
+}
+
+.season-btn:hover {
+    background: var(--gold-dim);
+    border-color: var(--border-accent);
+    color: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(212,175,55,0.12);
+}
+
+/* Per-button accent shades */
+.season-btn:nth-child(1) { border-color: rgba(212,175,55,0.3); color: var(--gold); }
+.season-btn:nth-child(2) { border-color: rgba(102,126,234,0.3); }
+.season-btn:nth-child(3) { border-color: rgba(96,165,250,0.3); }
+.season-btn:nth-child(4) { border-color: rgba(52,211,153,0.3); }
+.season-btn:nth-child(5) { border-color: rgba(251,191,36,0.3); }
+.season-btn:nth-child(6) { border-color: rgba(248,113,113,0.3); }
+.season-btn:nth-child(7) { border-color: rgba(251,146,60,0.3); }
+.season-btn:nth-child(8) { border-color: rgba(236,72,153,0.3); }
+
+/* ============================================
+   Leaderboard Cards
+   ============================================ */
+.horizontal-bar {
+    width: 85%;
+    max-width: 820px;
+    height: 114px;
+    display: flex;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+    position: relative;
+}
+
+.horizontal-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-card);
+    background: linear-gradient(135deg, rgba(255,255,255,0.015) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.horizontal-bar:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(255,255,255,0.11);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.55);
+}
+
+/* Rank-1 gold accent */
+.horizontal-bar:first-of-type,
+.horizontal-bar:has(.cyan-section img[src*="top-1"]) {
+    border-color: rgba(212,175,55,0.4);
+    box-shadow: 0 4px 24px rgba(212,175,55,0.1), var(--shadow-card);
+}
+
+/* Cyan / Rank badge column */
+.cyan-section {
+    border-right: 1px solid var(--border);
+    background: rgba(255,255,255,0.025);
+    width: 82px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.cyan-image {
+    width: 88%;
+    height: 88%;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 6px;
+    filter: drop-shadow(0 2px 8px rgba(212,175,55,0.2));
+}
+
+.rank-number {
+    font-family: var(--font-display);
+    color: var(--text-secondary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Gray / Main content column */
+.gray-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.left-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1;
+    min-width: 0;
+}
+
+.right-content {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+/* Avatar */
+.avatar-container {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+}
+
+.avatar-image {
+    width: 128%;
+    height: 128%;
+    border-radius: 4px;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-43%, -50%);
+}
+
+.avatar-border {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(165% + 8px);
+    height: calc(165% + 8px);
+    object-fit: cover;
+    pointer-events: none;
+    transform: translate(-45%, -50%);
+}
+
+.avatar-border-coop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: calc(166% + 10px);
+    height: calc(166% + 10px);
+    object-fit: cover;
+    pointer-events: none;
+    transform: translate(-45%, -50%);
+}
+
+/* User info */
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+    flex: 1;
+}
+
+.user-name-level {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.user-name {
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex: 1;
+}
+
+.level-badge {
+    background: linear-gradient(135deg, #a66cfd, #7c3aed);
+    color: #fff;
+    font-family: var(--font-main);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 2px 7px;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.main-role {
+    color: var(--gold);
+    font-family: var(--font-main);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.member-role {
+    color: var(--text-muted);
+    font-family: var(--font-main);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Entry count */
+.entry-container {
+    display: flex;
+    align-items: baseline;
+    gap: 1px;
+}
+
+.entry-text {
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.entry-current {
+    color: var(--text-primary);
+}
+
+.entry-total {
+    color: var(--text-muted);
+}
+
+/* Damage display */
+.damage-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: rgba(0,0,0,0.35);
+    border: 1px solid var(--border);
+    padding: 9px 16px;
+    border-radius: var(--radius-pill);
+    white-space: nowrap;
+    min-width: 170px;
+}
+
+.damage-icon {
+    width: 28px;
+    height: 22px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.damage-text {
+    color: var(--gold-light);
+    font-family: var(--font-main);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-align: right;
+    flex: 1;
+}
+
+/* ============================================
+   Responsive — Tablet (≤1024px)
+   ============================================ */
+@media (max-width: 1024px) {
+    .hamburger-btn { display: flex; }
+    .desktop-nav   { display: none; }
+
+    .logo { font-size: 1.3rem; letter-spacing: 2px; }
+    .navbar { padding: 0.8rem 1.2rem; }
+    .nav-menu { width: 260px; }
+    .content { padding: 1rem; margin: 5rem auto 2rem; }
+    .content h1 { font-size: 2rem; }
+    .content-section { padding: 2rem 1rem; min-height: 300px; }
+}
+
+/* ============================================
+   Responsive — Mobile (≤768px)
+   ============================================ */
+@media (max-width: 768px) {
+    body { padding: 10px; gap: 8px; }
+
+    .seasons-wrapper { width: 95%; gap: 10px; }
+    .arrow-btn { width: 40px; height: 40px; font-size: 16px; border-radius: 6px; }
+    .season-btn { padding: 9px 18px; font-size: 0.72rem; border-radius: 5px; }
+    .seasons-scroll { gap: 10px; }
+
+    .horizontal-bar { width: 95%; height: 80px; }
+    .cyan-section { width: 68px; padding: 6px; }
+    .gray-section { padding: 10px 12px; gap: 8px; }
+
+    .rank-number { font-size: 1.1rem; }
+    .avatar-wrapper { width: 44px; height: 44px; }
+    .user-info { gap: 4px; }
+    .user-name { font-size: 0.82rem; }
+    .main-role, .member-role { font-size: 0.62rem; }
+    .entry-text { font-size: 0.7rem; }
+
+    .damage-container { padding: 7px 12px; min-width: 140px; }
+    .damage-text { font-size: 0.7rem; }
+    .damage-icon { width: 18px; height: 16px; }
+
+    .left-content { gap: 8px; min-width: 0; flex: 1; }
+    .right-content { gap: 6px; flex-shrink: 0; }
+    .avatar-container { gap: 10px; min-width: 0; }
+}
+
+/* ============================================
+   Responsive — Small Mobile (≤480px)
+   ============================================ */
+@media (max-width: 480px) {
+    body { padding: 8px; gap: 6px; }
+
+    img { width: 102%; }
+    .header-wrapper { position: relative; top: 20px; }
+
+    .seasons-wrapper { width: 98%; gap: 8px; }
+    .arrow-btn { width: 36px; height: 36px; font-size: 14px; border-radius: 5px; padding: 0; }
+    .season-btn { padding: 7px 14px; font-size: 0.68rem; border-radius: 5px; }
+    .seasons-scroll { gap: 8px; }
+
+    .horizontal-bar { width: 98%; height: 70px; }
+    .cyan-section { width: 58px; padding: 4px; }
+    .gray-section { padding: 8px 10px; width: 100%; }
+    .rank-number { font-size: 0.95rem; }
+
+    .left-content { gap: 6px; }
+    .right-content { gap: 4px; }
+    .avatar-container { gap: 8px; }
+    .avatar-wrapper { width: 36px; height: 36px; }
+    .user-info { gap: 3px; }
+    .user-name { font-size: 0.75rem; }
+    .level-badge { font-size: 0.55rem; padding: 1px 4px; }
+    .main-role, .member-role { font-size: 0.58rem; }
+    .entry-text { font-size: 0.65rem; }
+
+    .damage-container { padding: 6px 10px; gap: 6px; min-width: 118px; border-radius: 18px; }
+    .damage-text { font-size: 0.62rem; }
+    .damage-icon { width: 14px; height: 12px; }
+
+    .nav-menu { width: 80%; max-width: 270px; }
+}
+
+/* ============================================
+   Responsive — Tiny (≤360px)
+   ============================================ */
+@media (max-width: 360px) {
+    .arrow-btn { width: 34px; height: 34px; font-size: 13px; }
+    .season-btn { padding: 6px 12px; font-size: 0.62rem; }
+
+    .horizontal-bar { height: 62px; }
+    .cyan-section { width: 52px; }
+    .gray-section { padding: 6px 8px; }
+    .rank-number { font-size: 0.85rem; }
+    .avatar-wrapper { width: 30px; height: 30px; }
+    .user-name { font-size: 0.68rem; }
+    .main-role, .member-role { font-size: 0.55rem; }
+    .entry-text { font-size: 0.6rem; }
+
+    .damage-container { padding: 5px 8px; min-width: 100px; }
+    .damage-text { font-size: 0.58rem; }
+    .damage-icon { width: 12px; height: 10px; }
+
+    .avatar-image {
+        width: 125%; height: 125%;
+        transform: translate(-45%, -50%);
+    }
+
+    .avatar-border {
+        width: calc(139% + 10px);
+        height: calc(139% + 10px);
+        transform: translate(-46%, -50%);
+    }
+}

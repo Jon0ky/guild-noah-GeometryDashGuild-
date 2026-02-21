@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>top raid</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script src="navbar.js" defer></script>
+    <script src="season-button.js" defer></script>
+
+</head>
+<body>
+
+    <!-- img utama -->
+
+    <div class="header-wrapper">
+        <picture>
+            <!-- Desktop -->
+            <source media="(min-width: 1024px)" srcset="headerimg/destop.png">
+            <!-- Tablet -->
+            <source media="(min-width: 768px)" srcset="headerimg/tablet.png">
+            <!-- Mobile (no media query needed - it's the default) -->
+            <source srcset="headerimg/phone.png">
+            <!-- Fallback -->
+            <img src="headerimg/phone.png" alt="Responsive Image">
+        </picture>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+                <!-- hamburger SVG icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="logo" style="font-family: Arial, sans-serif;">GeometryDashGuild</div>
+            
+            <!-- Desktop Navigation -->
+            <ul class="desktop-nav">
+                <li><a href="guild-member-statistics.html">Member Statistics</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tempat test/uhuk.html">test</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="nav-menu" id="navMenu">
+        <button class="close-btn" id="closeBtn" aria-label="Close menu">
+            <!-- close SVG -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <ul class="nav-links">
+            <li><a href="guild-member-statistics.html">Member Statistics</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- season button -->
+    <div class="seasons-wrapper">
+        <button class="arrow-btn" id="leftArrow">❮</button>
+        
+        <div class="seasons-scroll" id="seasonsScroll">
+            <a href="index.html" class="season-btn">Season 125</a>
+            <a href="to_be_continue.html" class="season-btn">Season 126</a>
+            <a href="to_be_continue.html" class="season-btn">Season 127</a>
+            <a href="to_be_continue.html" class="season-btn">Season 128</a>
+            <a href="to_be_continue.html" class="season-btn">Season 129</a>
+            <a href="to be continue.html" class="season-btn">Season 130</a>
+            <a href="to be continue.html" class="season-btn">Season 131</a>
+            <a href="to be continue.html" class="season-btn">Season 132</a>
+            <a href="to be continue.html" class="season-btn">Season 133</a>
+        </div>
+
+        <button class="arrow-btn" id="rightArrow">❯</button>
+    </div>
+</div>    
+
+    <!-- top leaderboard ini peting jangan dihapus kecuali sudah minta izin ama ketua -->
+     
+    
+    <!-- Rank 1 - Top damage with special image -->
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <img src="top-1.png" alt="Top 1 Special Icon" class="cyan-image">
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/Garam.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">Amethyst </p>
+                        </div>
+                        <p class="main-role">Officer</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">21</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">3,190,789,762</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank 2 - Second place with special image -->
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <img src="top-2.png" alt="Top 2 Special Icon" class="cyan-image">
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/Claude.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">Timoteo</p>
+                        </div>
+                        <p class="member-role">Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">21</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">1,248,328,560</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank 3 - Third place with special image -->
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <img src="top-3.png" alt="Top 3 Special Icon" class="cyan-image">
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/Nifty_Myth.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">Noah</p>
+                        </div>
+                        <p class="main-role">Guild Master</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">3</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">319,487,711</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank 4 and below - Using number instead of image -->
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <span class="rank-number">4</span>
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/Garam.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">fangyuan</p>
+                        </div>
+                        <p class="member-role">Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">3</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">260,010,239</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank 5 --> 
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <span class="rank-number">5</span>
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/Kanna_Super Costume.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">S0ULFVRY</p>
+                        </div>
+                        <p class="member-role">Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">7</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">209,722,058</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank 6 --> 
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <span class="rank-number">6</span>
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/Clara.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">ilham</p>
+                        </div>
+                        <p class="member-role">Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">9</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">189,060,193</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank 7 --> 
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <span class="rank-number">7</span>
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/Kanna_Super Costume.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">Jake</p>
+                        </div>
+                        <p class="member-role">Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">3</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">133,421,169</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank 8 --> 
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <span class="rank-number">8</span>
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/Male Knight_Ascent.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">Ghost</p>
+                        </div>
+                        <p class="member-role">Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">2</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">99,520,322</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank 9 --> 
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <span class="rank-number">9</span>
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/Marina_Super Costume.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">KuroTako</p>
+                        </div>
+                        <p class="member-role">Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">21</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">58,242,949</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank 10 --> 
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <span class="rank-number">10</span>
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/Craig_Ascended.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">格兰特</p>
+                        </div>
+                        <p class="member-role">Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">1</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">35,715,752</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank 11 --> 
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <span class="rank-number">11</span>
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/AA72_Myth.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">Winter</p>
+                        </div>
+                        <p class="member-role">Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">1</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">27,155,369</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rank 12 --> 
+    <div class="horizontal-bar">
+        <div class="cyan-section">
+            <span class="rank-number">12</span>
+        </div>
+        <div class="gray-section">
+            <div class="left-content">
+                <div class="avatar-container">
+                    <div class="avatar-wrapper">
+                        <img src="char potrait/Illuni_Myth.png" alt="User Avatar" class="avatar-image">
+                    </div>
+                    <div class="user-info">
+                        <div class="user-name-level">
+                            <p class="user-name">Greenby </p>
+                        </div>
+                        <p class="member-role">Member</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-content">
+                <div class="entry-container">
+                    <span class="entry-text entry-current">3</span>
+                    <span class="entry-text entry-total">/21</span>
+                </div>
+                <div class="damage-container">
+                    <span class="damage-text">Greenby </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

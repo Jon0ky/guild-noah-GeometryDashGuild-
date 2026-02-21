@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Be Continued</title>
+    <link rel="stylesheet" href="styles1.css">
+    <script src="navbar.js" defer></script>
+    <script src="season-button.js" defer></script>
+    <style>
+        .tbc-container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .text-content {
+            animation: slideUp 1s ease-out 0.5s both;
+            padding: 20px;
+        }
+
+        .main-text {
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+            background: linear-gradient(135deg, var(--blue-bright), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sub-text {
+            color: var(--text-secondary);
+            font-family: var(--font-main);
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .info-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius-card);
+            padding: 25px;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-out 1s both;
+            box-shadow: var(--shadow-card);
+        }
+
+        .info-text {
+            color: var(--text-secondary);
+            font-family: var(--font-main);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .info-highlight {
+            color: var(--blue-bright);
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .main-text  { font-size: 2rem; }
+            .sub-text   { font-size: 1rem; }
+            .info-box   { padding: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .main-text  { font-size: 1.5rem; letter-spacing: 1px; }
+            .sub-text   { font-size: 0.9rem; }
+            .info-box   { padding: 15px; }
+            .info-text  { font-size: 0.88rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header image -->
+    <div class="header-wrapper">
+        <picture>
+            <source media="(min-width: 1024px)" srcset="headerimg/ada.webp">
+            <source media="(min-width: 768px)"  srcset="headerimg/hams.webp">
+            <source srcset="headerimg/main-page-phoneB.webp">
+            <img src="headerimg/main-page-phoneB.webp" alt="Responsive Image">
+        </picture>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="logo">GeometryDashGuild</div>
+            <ul class="desktop-nav">
+                <li><a href="guild-member-statistics.html">Member Statistics</a></li>
+                <li><a href="contact.html">Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="nav-menu" id="navMenu">
+        <button class="close-btn" id="closeBtn" aria-label="Close menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <ul class="nav-links">
+            <li><a href="guild-member-statistics.html">Member Statistics</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Season buttons -->
+    <div class="seasons-wrapper">
+        <button class="arrow-btn" id="leftArrow">❮</button>
+        <div class="seasons-scroll" id="seasonsScroll">
+            <a href="index.html" class="season-btn">Season 126</a>
+            <a href="to_be_continue.html" class="season-btn">Season 127</a>
+            <a href="to_be_continue.html" class="season-btn">Season 128</a>
+            <a href="to_be_continue.html" class="season-btn">Season 129</a>
+            <a href="to_be_continue.html" class="season-btn">Season 130</a>
+            <a href="to_be_continue.html" class="season-btn">Season 131</a>
+            <a href="to_be_continue.html" class="season-btn">Season 132</a>
+            <a href="to_be_continue.html" class="season-btn">Season 133</a>
+        </div>
+        <button class="arrow-btn" id="rightArrow">❯</button>
+    </div>
+
+    <!-- Main content -->
+    <div class="tbc-container">
+        <div class="text-content">
+            <h1 class="main-text">TO BE CONTINUED</h1>
+            <p class="sub-text">Season selanjutnya akan datang</p>
+
+            <div class="info-box">
+                <p class="info-text">
+                    <span class="info-highlight">Leaderboard belum tersedia</span> karena season ini belum dimulai.
+                </p>
+                <p class="info-text">
+                    Tunggu update selanjutnya untuk melihat ranking dan statistik!
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
